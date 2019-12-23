@@ -1,0 +1,12 @@
+{
+  "name": "Scroll_infinite_18",
+  "version": "1.0.0",
+  "description": "",
+  "main": "infinitescroll_adaptive.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
