@@ -1,16 +1,5 @@
 const {addImage,addFirstName,addLastName,addEmail,addPhone,addGender,Onscroll,load,loadMore}=require('./infinitescroll_adaptive')
 
-
-test('Testing load Function', function () {
-    var result=load()
-    expect(result.textContent).toEqual("");
-});
-
-test('Testing Onscroll Function', function () {
-    var result=Onscroll()
-    expect(result.textContent).toEqual(" Last Name: Teja");
-});
-
 test('Testing AddLastName Function', function () {
     var result=addLastName('Teja')
     expect(result.textContent).toEqual(" Last Name: Teja");
