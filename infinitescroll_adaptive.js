@@ -18,7 +18,7 @@ function load() {
             dob = data["results"]
            //dob=data;
             //       dob[0].picture.large=null;dob[0].gender=null; dob[0].name.first=null;
-            console.log(dob.length)
+            //console.log(dob.length)
             for (var present_index = 0; present_index < 6; present_index++) {
                 addPerson(dob[present_index]);
             }
@@ -57,8 +57,7 @@ function loadMore() {
 
         }
         else
-        addPerson(dob[present_index]);
-        
+        addPerson(dob[present_index]);     
     }
     last_display_index += 6;
 }
