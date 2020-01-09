@@ -2,11 +2,11 @@ const app = document.getElementById('root');
 var dob;
 var k = 0;
 var details;
+var last_display_index = 9;
 var card;
 onScroll();
 function load() {
     var numberOfCards=9;
-    var last_display_index = numberOfCards;
     var request = new XMLHttpRequest()
    url = 'https://randomuser.me/api/?results=100';
  //url='https://jsonplaceholder.typicode.com/users';                                          //Alternate Url
