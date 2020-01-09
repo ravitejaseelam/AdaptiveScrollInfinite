@@ -1,5 +1,5 @@
 const app = document.getElementById('root');
-var last_display_index = 9;
+var last_display_index = 12;
 var dob;
 var k = 0;
 var details;
@@ -19,7 +19,7 @@ function load() {
            //dob=data;
             //       dob[0].picture.large=null;dob[0].gender=null; dob[0].name.first=null;
             console.log(dob.length)
-            for (var present_index = 0; present_index < 9; present_index++) {
+            for (var present_index = 0; present_index < 12; present_index++) {
                 addPerson(dob[present_index]);
             }
         }
@@ -46,9 +46,9 @@ window.onscroll = function () {
 }
 function loadMore() {
     document.getElementById("loader").style.visibility = "hidden";
-    for (var present_index = last_display_index; present_index < last_display_index + 9; present_index++) {
+    for (var present_index = last_display_index; present_index < last_display_index + 12; present_index++) {
         if (present_index >= dob.length) {
-            last_display_index = 9;
+            last_display_index = 12;
             alert("Nextcall is Made")
             load();
 
@@ -57,7 +57,7 @@ function loadMore() {
         addPerson(dob[present_index]);
         
     }
-    last_display_index += 9;
+    last_display_index += 12;
 }
 function addPerson(dob) {
 
