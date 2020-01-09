@@ -8,7 +8,7 @@ onScroll();
 function load() {
     var request = new XMLHttpRequest()
    url = 'https://randomuser.me/api/?results=100';
- //url='https://jsonplaceholder.typicode.com/users';                                      //Alternate 
+ //url='https://jsonplaceholder.typicode.com/users';
     console.log(url);
     request.open('GET', url, true)
     request.onload = function () {
@@ -16,9 +16,9 @@ function load() {
         StopLoadAnimation();
         if (request.status >= 200 && request.status < 400) {
             dob = data["results"]
-           //dob=data;                                                                     //Testing
-            //       dob[0].picture.large=null;dob[0].gender=null; dob[0].name.first=null; //Testing
-            //console.log(dob.length)                                                      //Testing
+           //dob=data;
+            //       dob[0].picture.large=null;dob[0].gender=null; dob[0].name.first=null;
+            console.log(dob.length)
             for (var present_index = 0; present_index < 6; present_index++) {
                 addPerson(dob[present_index]);
             }
@@ -44,9 +44,6 @@ window.onscroll = function () {
     }
 }
 }
-
-
-
 function loadMore() {
     document.getElementById("loader").style.visibility = "hidden";
     for (var present_index = last_display_index; present_index < last_display_index + 6; present_index++) {
@@ -57,11 +54,11 @@ function loadMore() {
 
         }
         else
-        addPerson(dob[present_index]);     
+        addPerson(dob[present_index]);
+        
     }
     last_display_index += 6;
 }
-
 function addPerson(dob) {
 
    var img
@@ -89,7 +86,6 @@ function addPerson(dob) {
 
 }
 module.exports={addPerson,addDiv,append,addImage,addFirstName,addLastName,addEmail,addPhone,addGender,load,loadMore}
-
 function addFirstName(data) {
     info_name = document.createElement('h1')
     if (data != null)
@@ -101,7 +97,6 @@ function addFirstName(data) {
     info_name.setAttribute('class', 'info_name')
     return info_name;
 }
-
 function addLastName(data) {
      info_sname = document.createElement('h1')
     if (data != null)
@@ -125,7 +120,6 @@ function addEmail(data) {
     email.setAttribute('class', 'email')
     return email;
 }
-
 function addPhone(data) {
      phone = document.createElement('h1')
     if (data != null) {
@@ -153,7 +147,6 @@ function addGender(data) {
     }
     return gender;
 }
-
 function addImage(data,data_f,data_s) {
      img = document.createElement('img');
 
@@ -186,7 +179,6 @@ function addDiv() {
     details.setAttribute('class', 'details')
 
 }
-
 function append() {
     details.appendChild(info_name)
     details.appendChild(info_sname)
