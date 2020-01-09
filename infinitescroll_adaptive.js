@@ -1,15 +1,14 @@
 const app = document.getElementById('root');
+var last_display_index = 9;
 var dob;
 var k = 0;
 var details;
-var last_display_index = 9;
 var card;
 onScroll();
 function load() {
-    var numberOfCards=9;
     var request = new XMLHttpRequest()
    url = 'https://randomuser.me/api/?results=100';
- //url='https://jsonplaceholder.typicode.com/users';                                          //Alternate Url
+ //url='https://jsonplaceholder.typicode.com/users';
     console.log(url);
     request.open('GET', url, true)
     request.onload = function () {
@@ -17,10 +16,10 @@ function load() {
         StopLoadAnimation();
         if (request.status >= 200 && request.status < 400) {
             dob = data["results"]
-           //dob=data;                                                                          //Testing
-            //       dob[0].picture.large=null;dob[0].gender=null; dob[0].name.first=null;      //Testing
+           //dob=data;
+            //       dob[0].picture.large=null;dob[0].gender=null; dob[0].name.first=null;
             console.log(dob.length)
-            for (var present_index = 0; present_index < numberOfCards; present_index++) {
+            for (var present_index = 0; present_index < 9; present_index++) {
                 addPerson(dob[present_index]);
             }
         }
@@ -47,9 +46,9 @@ window.onscroll = function () {
 }
 function loadMore() {
     document.getElementById("loader").style.visibility = "hidden";
-    for (var present_index = last_display_index; present_index < last_display_index + numberOfCards; present_index++) {
+    for (var present_index = last_display_index; present_index < last_display_index + 9; present_index++) {
         if (present_index >= dob.length) {
-            last_display_index = numberOfCards;
+            last_display_index = 9;
             alert("Nextcall is Made")
             load();
 
@@ -58,7 +57,7 @@ function loadMore() {
         addPerson(dob[present_index]);
         
     }
-    last_display_index += numberOfCards;
+    last_display_index += 9;
 }
 function addPerson(dob) {
 
