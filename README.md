@@ -1,0 +1,3 @@
+# AdaptiveScrollInfinite
+//for deployed site plz refer to the below site....
+https://contactlist221b.netlify.com/
