@@ -8,7 +8,7 @@ onScroll();
 function load() {
     var request = new XMLHttpRequest()
    url = 'https://randomuser.me/api/?results=100';
- //url='https://jsonplaceholder.typicode.com/users';
+ //url='https://jsonplaceholder.typicode.com/users';                                          //Alternate Url
     console.log(url);
     request.open('GET', url, true)
     request.onload = function () {
@@ -16,8 +16,8 @@ function load() {
         StopLoadAnimation();
         if (request.status >= 200 && request.status < 400) {
             dob = data["results"]
-           //dob=data;
-            //       dob[0].picture.large=null;dob[0].gender=null; dob[0].name.first=null;
+           //dob=data;                                                                          //Testing
+            //       dob[0].picture.large=null;dob[0].gender=null; dob[0].name.first=null;      //Testing
             console.log(dob.length)
             for (var present_index = 0; present_index < 6; present_index++) {
                 addPerson(dob[present_index]);
